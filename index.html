@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Cat Game</title>
+        <script src="jquery-1.11.3.min.js"></script>
+        <script src="mygame.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5" id="aboutblock">
+                    <p>This is "memorize" or "match images" game. In "easy" mode, you click
+                       cards to flip them, and see the images. If two flipped images match,
+                       they will remain open, and you can open more images. If two images
+                       don't match - remember the cats, and click any of the cards, the 
+                       "not matched" images will be turned back. The goal is to open all
+                       images.
+                       <button type="button" class="easybutton" onclick="startGame($('#gamecontainer'), 6, 12);">Start easy game</button>
+                    </p>
+                    <p>In the "normal" mode, there is 3 copies of each cat; you need to open
+                       three similar images in a row, instead of two.
+                       <button type="button" class="normalbutton" onclick="startGame($('#gamecontainer'), 6, 18);">Start normal game</button>
+                    </p>
+                    <p>In the "insane" mode (not implemented yet), you will find
+                       hundreds of cats, and 10 copies of each. Do not click this button.
+                       <button type="button" class="insanebutton" onclick="startGame($('#gamecontainer'), 1, 2);">Start insane game</button>
+                    </p>  
+                </div>
+                <div class="col-md-7" id="gamecontainer">
+                </div>
+            </div>
+            <div class="row">
+                <p style="color:lightgray; text-align:center">(c) 2015, game: Sergey Bushkov; images: photos-public-domain.com</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            /* start "easy" game when page is loaded; do not show empty div container */
+            startGame($('#gamecontainer'), 6, 12);
+        </script>
+    </body>
+</html>
+
