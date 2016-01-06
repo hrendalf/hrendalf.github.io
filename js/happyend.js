@@ -13,9 +13,9 @@ happyendings = [
     },
 
     {
-        author: "1",
-        title: "2",
-        quote: "3"
+        author: "Howard Phillips Lovecraft",
+        title: "Dagon",
+        quote: "The end is near. I hear a noise at the door, as of some immense slippery body lumbering against it. It shall find me. God, that hand! The window! The window!"
     },
 
 

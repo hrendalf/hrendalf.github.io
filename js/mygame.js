@@ -56,7 +56,8 @@ function startGame(parent, numCats, numCards) {
         flipped: flipped,
         cleared: cleared,
         lastFlippedCat: 0, /* last cat number; or 0 when sequence restarts */
-        unflipOnNextClick: false /* set when guessed wrong cat */   
+        unflipOnNextClick: false, /* set when guessed wrong cat */
+        turns: 0 /* number of turns */
     }
 
     /* the following line attaches the state object to the parent div element.
@@ -100,19 +101,20 @@ function flip(img) {
         return;
     }
 
-    /* clicked already "matched" image - nothing interesting; just return */
-    if (game.cleared[index]) {
+    /* clicked already "cleared" or open image - nothing interesting; just return */
+    if (game.cleared[index] || game.flipped[index]) {
         return;
     }
 
     /* here is the main "matching images" logic */
-
+    game.turns += 1;
     var currentCat = game.deck[index]; /* the cat type number */
     if (game.lastFlippedCat == 0) {
         /* just started - flipped the first cat; show the image and update state */
         game.lastFlippedCat = currentCat;
         game.flipped[index] = true;
         $(img).attr('src', 'cat_' + currentCat + '.png');
+
     } else if (currentCat == game.lastFlippedCat) {
         /* flipped another card, and it matched the last one. Show the image,
            and check if more cats of this type left closed (remember, it can 
@@ -159,7 +161,14 @@ function flip(img) {
 
                 var onclickString = "startGame($('#gamecontainer'), " + game.numCats + ", " + game.numCards + ");"
                 var buttonString = '<button type="button" class="easybutton" onclick="' + onclickString + '">Play again?</button>';
-                $(parentDiv).append('<p>Congratulations, you won! ' + buttonString + '</p>');
+                $(parentDiv).append('<p>Congratulations, you beat the game in ' + game.turns + ' turns!</p>');
+                rhe = happyendings[Math.floor(Math.random() * happyendings.length)];
+                $(parentDiv).append('<p>Here is your random happy end:</p>');
+                $(parentDiv).append('<blockquote class="blockquote-reverse">'
+                    +'<p>' + rhe.quote + '</p>'
+                    +'<small>' + rhe.author + ' in <cite title="' + rhe.title + '">'+rhe.title +'</cite></small>'
+                    +'</blockquote>');
+                $(parentDiv).append(buttonString);
             }
         }
     } else {
