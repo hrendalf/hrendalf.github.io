@@ -6,6 +6,40 @@ h1 {
     text-align: center;
 }
 
+
+@media(max-width:767px) { /* xs - phone - render 4 image in a row, and thick borders */
+
+/* normal cat image with rounded border */
+.gameimage {
+    border: solid 3px burlywood;
+    border-radius: 10px;
+    max-width: 20%;
+    margin: 1%;
+}
+
+/* "not matched" images - use red border */
+.gameimagewrong {
+    border: solid 3px crimson;
+    border-radius: 10px;
+    max-width: 20%;
+    margin: 1%;
+}
+
+/* "matched" images - use green border, and make it semi-transparent */
+.gameimagematched {
+    border: solid 3px yellowgreen;
+    border-radius: 10px;
+    max-width: 20%;
+    margin: 1%;
+    opacity: 0.4; /* make it less visible */
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+} /* end xs */
+
+
+@media(min-width:768px) { /* small+ */
+
 /* normal cat image with rounded border */
 .gameimage {
     border: solid 2px burlywood;
@@ -33,6 +67,10 @@ h1 {
     opacity: 0.4; /* make it less visible */
     filter: alpha(opacity=40); /* For IE8 and earlier */
 }
+
+} /* end small+ */
+
+
 
 /* the game div condainer */
 #gamecontainer {
