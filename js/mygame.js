@@ -211,3 +211,10 @@ function shuffle(array) {
     return array;
 }
 
+
+function preloadImages(numCats) {
+    for (i=1; i<=numCats; i++) {
+        var img = new Image();
+        img.src = 'cat_' + i + '.png';
+    }
+}
