@@ -7,7 +7,7 @@ h1 {
 }
 
 
-@media(max-width:767px) { /* xs - phone - render 4 image in a row, and thick borders */
+@media(max-width:991px) { /* sm-, - render 4 image in a row, and thick borders */
 
 /* normal cat image with rounded border */
 .gameimage {
@@ -35,10 +35,10 @@ h1 {
     filter: alpha(opacity=40); /* For IE8 and earlier */
 }
 
-} /* end xs */
+} /* end sm- */
 
 
-@media(min-width:768px) { /* small+ */
+@media(min-width:992px) { /* md+ */
 
 /* normal cat image with rounded border */
 .gameimage {
@@ -68,7 +68,7 @@ h1 {
     filter: alpha(opacity=40); /* For IE8 and earlier */
 }
 
-} /* end small+ */
+} /* end md+ */
 
 
 
