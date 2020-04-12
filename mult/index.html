@@ -17,7 +17,7 @@
                     <p class="lead">This is a simple practice page, press the button to roll random numbers.</p>
                     <hr/>
                     
-                    <h1 id="task" class="text-secondary text-center">1234 x 678</h1>
+                    <h2 id="task" class="text-secondary text-center">1234 x 678</h2>
                     
                 
                     <pre class="text-right lead"><code>42
@@ -32,10 +32,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <p style="color:lightgray; text-align:center">(c) 2020 hrendalf</p>
             </div>
+
+            <script type="text/javascript">
+            /* fill the initial question */
+            rollFirst($('#task'),$('#solve'));
+        </script>
         </div>
     </body>
 </html>
