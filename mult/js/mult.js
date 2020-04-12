@@ -12,7 +12,7 @@ function rollFirst(taskTarget, solveTarget) {
 
 function roll(taskTarget, solveTarget) {
     var a = randomIntBetween(100, 2999);
-    var b = randomIntBetween(10, 999);
+    var b = randomIntBetween(10, 333);
     rollExact(taskTarget, solveTarget, a, b);
 }
 
