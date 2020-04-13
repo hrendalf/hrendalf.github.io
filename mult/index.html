@@ -5,30 +5,31 @@
         <title>Multiplication</title>
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/mult.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-minty.css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-journal.css"/>
     </head>
 
     <body>
         <div class="container">
             <div class="row mt-3">
                 <div class="jumbotron col-sm-12">
-                    <h1>Practice Multiplication</h1>
+                    <h1 class="text-center">Practice Multiplication</h1>
                 
-                    <p class="lead">This is a simple practice page, press the button to roll random numbers.</p>
                     <hr/>
                     
-                    <h2 id="task" class="text-secondary text-center">1234 x 678</h2>
+                    <h2 id="task" class="text-primary text-center">1234 x 678</h2>
                     
                 
-                    <pre id="solve" class="text-right lead"><code>42
+                    <div class="text-center">
+                    <pre id="solve" class="text-muted lead text-right"><code>42
                     53
                     64</code></pre>
+                    </div>
                 
                     <hr/>
                     
                     <div class="text-center">
                         <a class="btn btn-primary btn-lg" href="#" role="button" onclick="roll($('#task'),$('#solve'));">Roll numbers</a>
-                        <a class="btn btn-secondary btn-lg" href="#" role="button" onclick="showMe($('#task'),$('#solve'));">Show Me</a>
+                        <a class="btn btn-success btn-lg" href="#" role="button" onclick="showMe($('#task'),$('#solve'));">Show Me</a>
                     </div>
                 </div>
             </div>
